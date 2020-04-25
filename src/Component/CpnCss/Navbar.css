@@ -1,0 +1,10 @@
+.Search{
+    margin-left: 67px;
+    width: 800px;
+    height: 45px;
+    border:none;
+    border-radius: 5px;
+}
+.Search:hover{
+    background-color: lightgray;
+}
