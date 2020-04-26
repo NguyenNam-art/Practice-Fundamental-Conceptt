@@ -16,7 +16,6 @@ class App extends Component {
       modalLabel : true
     };
   }
-  
   UNSAFE_componentWillMount() {
     if (localStorage && localStorage.getItem("tasks")) {
       var tasks = JSON.parse(localStorage.getItem("tasks"));
@@ -36,7 +35,6 @@ class App extends Component {
       });
     }
   };
-
   render() {
     var { tasks, isActive } = this.state;
     var elmActive = isActive ? <Left /> : "";

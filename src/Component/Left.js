@@ -49,7 +49,7 @@ class Left extends Component {
       },
       {
         id: this.gerenateId(),
-        name: "Nguyên Đôn Kim Trung",
+        name: "Nguyễn Đôn Kim Trung",
         phone: "01223554658",
         mail: "KimTrung@gmail.com",
       },
@@ -122,19 +122,23 @@ class Left extends Component {
       [name] : value
     });
   }
-  addlabel = () =>{
-    var label = [
+  wraperFuntion = () =>{
+    this.toggle();
+    this.OngenerateData();
+  }
+  // addlabel = () =>{
+  //   var label = [
 
-    ]
-  }
-  onSubmit = (event) =>{
-    var {label} = this.state.label;
-    event.preventDefault();
-    label.push(this.state.name)
-    this.setState({
-      label : label
-    });
-  }
+  //   ]
+  // }
+  // onSubmit = (event) =>{
+  //   var {label} = this.state.label;
+  //   event.preventDefault();
+  //   label.push(this.state.name)
+  //   this.setState({
+  //     label : label
+  //   });
+  // }
   render() {
     // let label = this.state.name;
     // let result;
@@ -156,10 +160,10 @@ class Left extends Component {
           <button
             type="button"
             className="btn btn-round btn-light "
-            onClick={this.toggle}
+           
+            onClick = {this.wraperFuntion}
           >
             <span>
-              {" "}
               <FontAwesomeIcon icon={faPlus} />
             </span>
             <span>Create Contact</span>
