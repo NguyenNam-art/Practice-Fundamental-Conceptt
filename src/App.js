@@ -1,46 +1,53 @@
 import React, { Component } from "react";
 import "./App.css";
-import Navbar from "./Component/Navbar";
-import Left from "./Component/Left";
-import Tasklist from "./Component/Tasklist";
+
+import Addtask from './Component/AddTask'
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tasks: [], // id : unique , name , status
-      isActive: true,
-      modal : true,
-      modalImport : true,
-      modalExport : true,
-      modalPrint : true,
-      modalLabel : true
-    };
-  }
-  UNSAFE_componentWillMount() {
-    if (localStorage && localStorage.getItem("tasks")) {
-      var tasks = JSON.parse(localStorage.getItem("tasks"));
-      this.setState({
-        tasks: tasks,
-      });
-    }
-  }
-  onSetState = () => {
-    if (this.state.isActive === true) {
-      this.setState({
-        isActive: false,
-      });
-    } else {
-      this.setState({
-        isActive: true,
-      });
-    }
-  };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+      
+  //     isActive: true,
+  //     modal : true,
+  //     modalImport : true,
+  //     modalExport : true,
+  //     modalPrint : true,
+  //     modalLabel : true
+  //   };
+  // }
+  // UNSAFE_componentWillMount() {
+  //   if (localStorage && localStorage.getItem("tasks")) {
+  //     var tasks = JSON.parse(localStorage.getItem("tasks"));
+  //     this.setState({
+  //       tasks: tasks,
+  //     });
+  //   }
+  // }
+  
+  // onSetState = () => {
+  //   if (this.state.isActive === true) {
+  //     this.setState({
+  //       isActive: false,
+  //     });
+  //   } else {
+  //     this.setState({
+  //       isActive: true,
+  //     });
+  //   }
+  // };
+  // onSubmit = (data) =>{
+  //   var {tasks} = this.state;
+  //   tasks.push(data);
+  //   this.setState({
+  //     tasks : tasks
+  //   });
+  // }
   render() {
-    var { tasks, isActive } = this.state;
-    var elmActive = isActive ? <Left /> : "";
+    // var { tasks, isActive } = this.state;
+    // var elmActive = isActive ? <Left onSubmit={this.onSubmit} /> : "";
     return (
-      <div className="bg-light">
-        <Navbar onSetState={this.onSetState} />
+      <div >
+        {/* <Navbar onSetState={this.onSetState} />
         <div className="row">
           <div
             className={
@@ -58,9 +65,11 @@ class App extends Component {
                 : "col-xs-12 col-sm-12 col-md-12 col-lg-12"
             }
           >
-            <Tasklist tasks={tasks} />
+            <Tasklist  />
           </div>
-        </div>
+        </div> */}
+        <Addtask />
+        {/* <Tasklist/> */}
       </div>
     );
   }

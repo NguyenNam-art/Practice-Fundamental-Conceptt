@@ -1,33 +1,32 @@
 import React, { Component } from "react";
 import Taskitem from "./Taskitem";
-class Main extends Component {
+import {connect} from 'react-redux'
+import './CpnCss/taskList.css'
+import { Button } from "reactstrap";
+class Tasklist extends Component {
   render() {
     var { tasks } = this.props;
     var elmtask = tasks.map((task) => {
-      return <Taskitem key={task.id} task={task} />;
+      return <Taskitem key={task.name} task={task} />;
     });
     return (
-      <div className="bg-white">
-        <table className="table table-hover ">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone Number</th>
-              <th>Job title and Company</th>
-              <th><svg
-               width="20" viewBox="0 0 24 24">
-            
-              <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-              </svg></th>
-            </tr>
-          </thead>
-          <tbody>
-              {elmtask}
-          </tbody>
-        </table>
+      <div >
+        {elmtask}
+        <div className="row">
+            <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+            </div>
+            <div className="col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                <hr></hr>
+                <Button></Button> 
+            </div>
+        </div>
       </div>
     );
   }
 }
-export default Main;
+const mapStatetoProps = (state) => {
+  return {
+    tasks : state.tasks
+  };
+}
+export default connect(mapStatetoProps,null)(Tasklist);
