@@ -1,7 +1,8 @@
-import {combineReducers} from 'redux';
-import tasks from './tasks'
-const myReducers = combineReducers({
-    tasks // tasks : tasks
-
+import {combineReducers} from 'redux'
+import products from './products'
+import cart from './cart'
+const appReducers = combineReducers({
+    products,
+    cart
 });
-export default myReducers;
+export default  appReducers;

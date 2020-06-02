@@ -1,0 +1,1 @@
+export const MSG_ATC_SUCCESS = "mua hàng thành công"

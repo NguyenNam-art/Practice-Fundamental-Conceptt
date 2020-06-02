@@ -1,18 +1,8 @@
-import * as types from './../Constants/ActionTypes'
-export const listAll = () => {
+import * as types from './../Constants/Actiontypes'
+export const actAddToCart = (product, quantity) =>{
     return {
-        type : types.LIST_ALL
-    }
-}
-export const addTask = (task) => {
-    return {
-        type : types.ADD_TASK,
-        task
-    }
-}
-export const deleteTask = (name) => {
-    return {
-        type : types.DELETE_TASK,
-        name
+        type : types.ADD_TO_CART,
+        product,
+        quantity
     }
 }
